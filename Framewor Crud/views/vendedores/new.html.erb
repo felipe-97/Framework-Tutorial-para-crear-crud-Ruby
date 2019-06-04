@@ -1,0 +1,36 @@
+<%if @vendedor.id==nil%>
+    <%@action_name="create"%>
+    <%else%>
+    <%@action_name="update"%>
+
+   <%=form_for :vendedor, url:@action_name do |t|%>
+<div class="form-group"> <i class="fas fa-user-edit"></i>
+Name :<%=t.text_field :nombre,placeholder:"Ingrese Su Nombre Completo", :required => true ,class: "form-control"%>
+</div>
+<div class="form-group"> <i class="fas fa-street-view"></i>
+Address:<%=t.text_field :direccion,placeholder:"Ingrese Su Dirección",:required => true , class: "form-control"%>
+</div>    
+<div class="form-group"> <i class="fas fa-city"></i>
+City: <%=t.text_field :telefono,placeholder:"Ingrese la ciudad" ,:required => true ,class: "form-control"%>
+</div>
+<div class="form-group" > <i class="fas fa-mobile-alt"></i>
+Phone:<%=t.text_field :telefono,placeholder:"Ingrese Su Telefono" ,:required => true ,class: "form-control"%>
+</div>
+
+    
+<div class="form-group">  
+                <%if @vendedor.id==nil%>
+                    <input class="btn btn-success btn-block" type="submit" value="Create"/>
+                    <%else%>
+                    <%= t.hidden_field :id %>
+                    <input class="btn btn-primary btn-block" type="submit" value="Update"/> 
+                <%end%>
+            </div>
+ <%=link_to 'Volver', "/vendedor/index", class: "btn btn-secondary",method: :get %>
+   
+  
+
+<%end%>    
+
+</div>
+    </div>

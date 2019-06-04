@@ -1,0 +1,38 @@
+<table style="widht:100%">
+    
+    <br><thead >
+        <tr >
+            <th> Name </th>
+            <th> Address </th>
+            <th> City </th>
+            <th> Phone </th>
+            <th> Update </th>
+            <th>  Delete </th>
+        </tr>  
+    </thead>     
+    <tbody >
+        <% @vendedor.each do |x| %>
+        <tr>
+            <td> <%=x.nombre%> </td>  
+            <td> <%=x.direccion%> </td>         
+            <td> <%=x.ciudad%> </td>
+            <td> <%=x.telefono%> </td>
+           
+            <td> <%=link_to controller: "vendedor",action: "edit", id:x.id do%>
+            <i class="far fa-edit fa-2x"></i>
+            <%end%>
+             </td>
+           
+           <td> <%=link_to controller: "vendedor",action: "destroy", id:x.id, data: { confirm: 'are you sure?'} do%>
+            <i class="far fa-trash-alt fa-2x"></i>
+            <%end%> 
+             </td>
+            
+        </tr>        
+          <% end %>  
+                
+    </tbody>      
+     
+</table>  
+ 
+ <center> <%=link_to "Create new Seller", { controller: "vendedor",action: "new"}%></center>
