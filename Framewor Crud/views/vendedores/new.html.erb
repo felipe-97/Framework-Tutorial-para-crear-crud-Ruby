@@ -11,13 +11,13 @@ Name :<%=t.text_field :nombre,placeholder:"Ingrese Su Nombre Completo", :require
 Address:<%=t.text_field :direccion,placeholder:"Ingrese Su Dirección",:required => true , class: "form-control"%>
 </div>    
 <div class="form-group"> <i class="fas fa-city"></i>
-City: <%=t.text_field :telefono,placeholder:"Ingrese la ciudad" ,:required => true ,class: "form-control"%>
+City: <%=t.text_field :ciudad,placeholder:"Ingrese la ciudad" ,:required => true ,class: "form-control"%>
 </div>
 <div class="form-group" > <i class="fas fa-mobile-alt"></i>
 Phone:<%=t.text_field :telefono,placeholder:"Ingrese Su Telefono" ,:required => true ,class: "form-control"%>
 </div>
 
-    
+       
 <div class="form-group">  
                 <%if @vendedor.id==nil%>
                     <input class="btn btn-success btn-block" type="submit" value="Create"/>
